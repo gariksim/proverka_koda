@@ -1,2 +1,31 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+#include <iostream> 
+
+#include <string.h> 
+
+#include <Windows.h> 
+
+using namespace std; 
+
+main() 
+
+{SetConsoleCP(1251); 
+
+SetConsoleOutputCP(1251); 
+
+char str[200]; 
+
+int kolAia=0; 
+
+cout<<"Введите текст:"; 
+
+cin.getline(str,200); 
+
+for(int i=0;i<strlen(str);i++) 
+
+if(str[i]=='а' || str[i]=='я') kolAia++; 
+
+cout<<"\nКоличество букв а и я = "<<kolAia; 
+
+cout<<"\nПроцентное соотношение = "<<(float)kolAia/strlen(str)*100; 
+
+}
